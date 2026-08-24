@@ -1,1 +1,318 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Noor Luxury Salon Pakistan</title>
+  <meta name="description" content="Learn about Noor Luxury Salon's 10+ years of beauty excellence in Pakistan. Discover our hygiene philosophy, certified beauty artists, and quality international products.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --salon-tjv-primary-dark: #302724;
+      --salon-tjv-soft-beige: #faf7f4;
+      --salon-tjv-rose: #d8b7ae;
+      --salon-tjv-muted-brown: #8b6f61;
+      --salon-tjv-gold-accent: #c9a86a;
+      --salon-tjv-white: #ffffff;
+      --salon-tjv-light-beige: #eee4dc;
+      --salon-tjv-font-heading: 'Playfair Display', serif;
+      --salon-tjv-font-body: 'Poppins', sans-serif;
+    }
+
+    body {
+      font-family: var(--salon-tjv-font-body);
+      background-color: var(--salon-tjv-soft-beige);
+      color: var(--salon-tjv-primary-dark);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 { font-family: var(--salon-tjv-font-heading); }
+
+    .salon-tjv-navbar {
+      background-color: rgba(48, 39, 36, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+
+    .salon-tjv-navbar-brand {
+      font-family: var(--salon-tjv-font-heading);
+      font-size: 1.8rem;
+      color: var(--salon-tjv-gold-accent) !important;
+      font-weight: 700;
+    }
+
+    .salon-tjv-nav-link {
+      color: var(--salon-tjv-light-beige) !important;
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin: 0 10px;
+    }
+
+    .salon-tjv-nav-link:hover, .salon-tjv-nav-link.salon-tjv-active {
+      color: var(--salon-tjv-gold-accent) !important;
+    }
+
+    .salon-tjv-btn-gold {
+      background-color: var(--salon-tjv-gold-accent);
+      color: var(--salon-tjv-primary-dark);
+      border: 1px solid var(--salon-tjv-gold-accent);
+      padding: 10px 24px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .salon-tjv-btn-gold:hover {
+      background-color: transparent;
+      color: var(--salon-tjv-gold-accent);
+    }
+
+    /* Page Header */
+    .salon-tjv-page-header {
+      background: linear-gradient(rgba(48, 39, 36, 0.75), rgba(48, 39, 36, 0.75)), url('https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      padding: 140px 0 70px 0;
+      color: var(--salon-tjv-white);
+      text-center: center;
+    }
+
+    .salon-tjv-section-padding { padding: 90px 0; }
+
+    .salon-tjv-section-subtitle {
+      color: var(--salon-tjv-muted-brown);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: block;
+    }
+
+    .salon-tjv-section-title {
+      color: var(--salon-tjv-primary-dark);
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .salon-tjv-title-divider {
+      width: 60px;
+      height: 2px;
+      background-color: var(--salon-tjv-gold-accent);
+      margin: 15px 0 30px 0;
+    }
+
+    /* Stat Box */
+    .salon-tjv-stat-box {
+      background-color: var(--salon-tjv-white);
+      padding: 35px 20px;
+      text-align: center;
+      border: 1px solid var(--salon-tjv-light-beige);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    }
+
+    .salon-tjv-stat-number {
+      font-size: 3rem;
+      font-family: var(--salon-tjv-font-heading);
+      color: var(--salon-tjv-gold-accent);
+      font-weight: 700;
+    }
+
+    .salon-tjv-footer {
+      background-color: var(--salon-tjv-primary-dark);
+      color: var(--salon-tjv-light-beige);
+      padding-top: 80px;
+      padding-bottom: 30px;
+    }
+
+    .salon-tjv-footer-title {
+      color: var(--salon-tjv-gold-accent);
+      font-size: 1.3rem;
+      margin-bottom: 25px;
+    }
+
+    .salon-tjv-footer-links { list-style: none; padding: 0; }
+    .salon-tjv-footer-links li { margin-bottom: 12px; }
+    .salon-tjv-footer-links a { color: var(--salon-tjv-light-beige); text-decoration: none; }
+    .salon-tjv-footer-links a:hover { color: var(--salon-tjv-gold-accent); }
+
+    .salon-tjv-whatsapp-btn {
+      position: fixed; bottom: 25px; right: 25px;
+      background-color: #25D366; color: white;
+      width: 55px; height: 55px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 1000; text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top salon-tjv-navbar" aria-label="Main Navigation">
+      <div class="container">
+        <a class="navbar-brand salon-tjv-navbar-brand" href="index.html">NOOR <span style="font-weight:300; font-size:1.2rem; color:var(--salon-tjv-rose);">LUXURY SALON</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#salonTjvNav" aria-controls="salonTjvNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="salonTjvNav">
+          <ul class="navbar-menu navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+            <li class="nav-item"><a class="nav-link salon-tjv-nav-link" href="./index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link salon-tjv-nav-link salon-tjv-active" aria-current="page" href="./aboutus.html">About</a></li>
+            <li class="nav-item"><a class="nav-link salon-tjv-nav-link" href="./services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link salon-tjv-nav-link" href="./bridal.html">Bridal</a></li>
+            <li class="nav-item"><a class="nav-link salon-tjv-nav-link" href="./contact.html">Contact</a></li>
+            <li class="nav-item ms-lg-3 mt-2 mt-lg-0"><a href="contact.html" class="salon-tjv-btn-gold">Book Appointment</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="salon-tjv-page-header text-center">
+      <div class="container">
+        <h1 class="display-4 fw-bold">About Noor Luxury Salon</h1>
+        <p class="lead" style="color: var(--salon-tjv-light-beige);">Redefining Beauty, Aesthetics & Elegance in Pakistan</p>
+      </div>
+    </section>
+
+    <!-- Main About Content -->
+    <section class="salon-tjv-section-padding">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" alt="Inside Noor Beauty Salon Interior" class="img-fluid shadow-lg" loading="lazy">
+          </div>
+          <div class="col-lg-6">
+            <span class="salon-tjv-section-subtitle">Our Journey & Legacy</span>
+            <h2 class="salon-tjv-section-title">A Heritage of Crafting Timeless Beauty</h2>
+            <div class="salon-tjv-title-divider"></div>
+            <p class="text-muted" style="line-height: 1.8;">Founded over a decade ago, Noor Luxury Salon was established with a singular vision: to bring world-class, premium beauty services to women across Pakistan in a private, luxurious, and completely soothing atmosphere.</p>
+            <p class="text-muted" style="line-height: 1.8;">From custom bridal transformations to advanced dermatological facials and organic hair therapies, we view beauty as an art form. Every guest who walks through our doors is treated with royal hospitality, customized consultations, and uncompromised professional care.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-5" style="background-color: var(--salon-tjv-light-beige);">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="salon-tjv-stat-box">
+              <div class="salon-tjv-stat-number">10+</div>
+              <div class="h5 fw-bold text-uppercase mt-2">Years Experience</div>
+              <p class="text-muted small mb-0">Delivering top-tier beauty artistry</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="salon-tjv-stat-box">
+              <div class="salon-tjv-stat-number">500+</div>
+              <div class="h5 fw-bold text-uppercase mt-2">Happy Brides</div>
+              <p class="text-muted small mb-0">Trusted for Barat & Walima looks</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="salon-tjv-stat-box">
+              <div class="salon-tjv-stat-number">20+</div>
+              <div class="h5 fw-bold text-uppercase mt-2">Specialized Services</div>
+              <p class="text-muted small mb-0">From hair rebonding to whitening facials</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy & Values -->
+    <section class="salon-tjv-section-padding">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="salon-tjv-section-subtitle">Our Core Commitments</span>
+          <h2 class="salon-tjv-section-title">The Noor Luxury Standard</h2>
+          <div class="salon-tjv-title-divider mx-auto"></div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="p-4 bg-white border h-100">
+              <div class="fs-2 text-warning mb-3"><i class="fa-solid fa-pump-medical"></i></div>
+              <h3 class="h4">Hygiene & Cleanliness</h3>
+              <p class="text-muted">We adhere to medical-grade sterilization. Tools are sanitized in autoclaves, and disposable kits are used for every client.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-4 bg-white border h-100">
+              <div class="fs-2 text-warning mb-3"><i class="fa-solid fa-award"></i></div>
+              <h3 class="h4">Authentic Products</h3>
+              <p class="text-muted">No replicas or low-grade chemicals. We import 100% genuine products directly from verified international beauty suppliers.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-4 bg-white border h-100">
+              <div class="fs-2 text-warning mb-3"><i class="fa-solid fa-heart-pulse"></i></div>
+              <h3 class="h4">Customer Satisfaction</h3>
+              <p class="text-muted">Your comfort and confidence are our ultimate goals. We offer individualized consultations prior to every major service.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a href="https://wa.me/923001234567" class="salon-tjv-whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="salon-tjv-footer">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <h3 class="salon-tjv-footer-title">NOOR LUXURY SALON</h3>
+          <p class="text-muted">Pakistan’s leading sanctuary for high-end bridal transformations, advanced skincare facials, organic hair therapies, and spa rituals.</p>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h4 class="salon-tjv-footer-title">Quick Links</h4>
+          <ul class="salon-tjv-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="bridal.html">Bridal Packages</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h4 class="salon-tjv-footer-title">Services</h4>
+          <ul class="salon-tjv-footer-links">
+            <li><a href="services.html#facials">Whitening Facials</a></li>
+            <li><a href="services.html#hair">Keratin & Rebonding</a></li>
+            <li><a href="bridal.html">Bridal Makeup</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h4 class="salon-tjv-footer-title">Contact</h4>
+          <p class="mb-1"><i class="fa-solid fa-location-dot me-2 text-warning"></i> Gulberg III, Lahore, Pakistan</p>
+          <p class="mb-1"><i class="fa-solid fa-phone me-2 text-warning"></i> +92 42 35789000</p>
+        </div>
+      </div>
+      <hr style="border-color: rgba(255,255,255,0.1);">
+      <div class="text-center pt-3 text-muted small">
+        <p class="mb-0">&copy; 2026 Noor Luxury Salon Pakistan. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
