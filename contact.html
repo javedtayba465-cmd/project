@@ -1,1 +1,326 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us & Book Appointment | Noor Luxury Salon Pakistan</title>
+  <meta name="description" content="Book your beauty appointment or bridal consultation online at Noor Luxury Salon Pakistan. Located in Gulberg, Lahore. Contact us via form or direct WhatsApp.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --salon-tjv-primary-dark: #302724;
+      --salon-tjv-soft-beige: #faf7f4;
+      --salon-tjv-rose: #d8b7ae;
+      --salon-tjv-muted-brown: #8b6f61;
+      --salon-tjv-gold-accent: #c9a86a;
+      --salon-tjv-white: #ffffff;
+      --salon-tjv-light-beige: #eee4dc;
+      --salon-tjv-font-heading: 'Playfair Display', serif;
+      --salon-tjv-font-body: 'Poppins', sans-serif;
+    }
+
+    body {
+      font-family: var(--salon-tjv-font-body);
+      background-color: var(--salon-tjv-soft-beige);
+      color: var(--salon-tjv-primary-dark);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 { font-family: var(--salon-tjv-font-heading); }
+
+    .salon-tjv-navbar {
+      background-color: rgba(48, 39, 36, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+
+    .salon-tjv-navbar-brand {
+      font-family: var(--salon-tjv-font-heading);
+      font-size: 1.8rem;
+      color: var(--salon-tjv-gold-accent) !important;
+      font-weight: 700;
+    }
+
+    .salon-tjv-nav-link {
+      color: var(--salon-tjv-light-beige) !important;
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin: 0 10px;
+    }
+
+    .salon-tjv-nav-link:hover, .salon-tjv-nav-link.salon-tjv-active {
+      color: var(--salon-tjv-gold-accent) !important;
+    }
+
+    .salon-tjv-btn-gold {
+      background-color: var(--salon-tjv-gold-accent);
+      color: var(--salon-tjv-primary-dark);
+      border: 1px solid var(--salon-tjv-gold-accent);
+      padding: 12px 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .salon-tjv-btn-gold:hover {
+      background-color: transparent;
+      color: var(--salon-tjv-gold-accent);
+    }
+
+    .salon-tjv-page-header {
+      background: linear-gradient(rgba(48, 39, 36, 0.75), rgba(48, 39, 36, 0.75)), url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      padding: 140px 0 60px 0;
+      color: var(--salon-tjv-white);
+      text-align: center;
+    }
+
+    .salon-tjv-section-padding { padding: 80px 0; }
+
+    .salon-tjv-contact-card {
+      background-color: var(--salon-tjv-white);
+      border: 1px solid var(--salon-tjv-light-beige);
+      padding: 40px;
+      height: 100%;
+    }
+
+    .salon-tjv-form-control {
+      border: 1px solid var(--salon-tjv-light-beige);
+      border-radius: 0;
+      padding: 12px 15px;
+      background-color: var(--salon-tjv-soft-beige);
+    }
+
+    .salon-tjv-form-control:focus {
+      border-color: var(--salon-tjv-gold-accent);
+      box-shadow: none;
+      background-color: #fff;
+    }
+
+    .salon-tjv-footer {
+      background-color: var(--salon-tjv-primary-dark);
+      color: var(--salon-tjv-light-beige);
+      padding-top: 80px;
+      padding-bottom: 30px;
+    }
+
+    .salon-tjv-footer-title { color: var(--salon-tjv-gold-accent); font-size: 1.3rem; margin-bottom: 25px; }
+    .salon-tjv-footer-links { list-style: none; padding: 0; }
+    .salon-tjv-footer-links li { margin-bottom: 12px; }
+    .salon-tjv-footer-links a { color: var(--salon-tjv-light-beige); text-decoration: none; }
+    .salon-tjv-footer-links a:hover { color: var(--salon-tjv-gold-accent); }
+
+    .salon-tjv-whatsapp-btn {
+      position: fixed; bottom: 25px; right: 25px;
+      background-color: #25D366; color: white;
+      width: 55px; height: 55px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 1000; text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top salon-tjv-navbar" aria-label="Main Navigation">
+      <div class="container">
+        <a class="navbar-brand salon-tjv-navbar-brand" href="index.html">NOOR <span style="font-weight:300; font-size:1.2rem; color:var(--salon-tjv-rose);">LUXURY SALON</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#salonTjvNav" aria-controls="salonTjvNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="salonTjvNav">
+          <ul class="navbar-menu navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+            <li class="nav-item"><a class="nav-link salon-tjv-nav-link" href="./index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link salon-tjv-nav-link" href="./aboutus.html">About</a></li>
+            <li class="nav-item"><a class="nav-link salon-tjv-nav-link" href="./services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link salon-tjv-nav-link" href="./bridal.html">Bridal</a></li>
+            <li class="nav-item"><a class="nav-link salon-tjv-nav-link salon-tjv-active" aria-current="page" href="./contact.html">Contact</a></li>
+            <li class="nav-item ms-lg-3 mt-2 mt-lg-0"><a href="contact.html" class="salon-tjv-btn-gold">Book Appointment</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Header -->
+    <section class="salon-tjv-page-header">
+      <div class="container">
+        <h1 class="display-4 fw-bold">Contact & Appointments</h1>
+        <p class="lead" style="color: var(--salon-tjv-light-beige);">Book your preferred beauty slot or visit our studio in Lahore</p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="salon-tjv-section-padding">
+      <div class="container">
+        <div class="row g-5">
+          <!-- Contact Info -->
+          <div class="col-lg-5">
+            <div class="salon-tjv-contact-card">
+              <h2 class="h3 mb-4">Get In Touch</h2>
+              
+              <div class="d-flex mb-4">
+                <div class="fs-4 text-warning me-3"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <h3 class="h6 mb-1">Our Location</h3>
+                  <p class="text-muted mb-0">Building 42, Block B3, MM Alam Road, Gulberg III, Lahore, Pakistan</p>
+                </div>
+              </div>
+
+              <div class="d-flex mb-4">
+                <div class="fs-4 text-warning me-3"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <h3 class="h6 mb-1">Phone & Inquiries</h3>
+                  <p class="text-muted mb-0">+92 42 35789000<br>+92 300 1234567</p>
+                </div>
+              </div>
+
+              <div class="d-flex mb-4">
+                <div class="fs-4 text-warning me-3"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <h3 class="h6 mb-1">Email Address</h3>
+                  <p class="text-muted mb-0">appointments@noorluxurysalon.pk</p>
+                </div>
+              </div>
+
+              <div class="d-flex mb-4">
+                <div class="fs-4 text-warning me-3"><i class="fa-solid fa-clock"></i></div>
+                <div>
+                  <h3 class="h6 mb-1">Working Hours</h3>
+                  <p class="text-muted mb-0">Monday - Sunday: 11:00 AM - 8:00 PM</p>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-3 border-top">
+                <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" class="btn btn-success w-100 py-2 fw-semibold" style="border-radius:0;">
+                  <i class="fa-brands fa-whatsapp me-2 fs-5"></i> Quick WhatsApp Booking
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Appointment Form -->
+          <div class="col-lg-7">
+            <div class="salon-tjv-contact-card">
+              <h2 class="h3 mb-2">Book an Appointment</h2>
+              <p class="text-muted mb-4">Fill out the form below and our front desk will confirm your slot within 2 hours.</p>
+
+              <form action="#" method="POST" id="appointmentForm">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="fullName" class="form-label small fw-semibold">Full Name *</label>
+                    <input type="text" class="form-control salon-tjv-form-control" id="fullName" placeholder="e.g. Fatima Khan" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="phoneNumber" class="form-label small fw-semibold">Phone Number *</label>
+                    <input type="tel" class="form-control salon-tjv-form-control" id="phoneNumber" placeholder="0300 1234567" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="emailAddress" class="form-label small fw-semibold">Email Address</label>
+                    <input type="email" class="form-control salon-tjv-form-control" id="emailAddress" placeholder="name@example.com">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="serviceSelect" class="form-label small fw-semibold">Select Service Category *</label>
+                    <select class="form-select salon-tjv-form-control" id="serviceSelect" required>
+                      <option value="" selected disabled>Choose category...</option>
+                      <option value="Bridal & Makeup">Bridal & Event Makeup</option>
+                      <option value="Facial Services">Facials & Skincare</option>
+                      <option value="Hair Services">Hair Care & Rebonding</option>
+                      <option value="Manicure Pedicure">Manicure & Pedicure</option>
+                      <option value="Massage Therapy">Massage & Spa</option>
+                      <option value="Body Waxing">Body Waxing</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="prefDate" class="form-label small fw-semibold">Preferred Date *</label>
+                    <input type="date" class="form-control salon-tjv-form-control" id="prefDate" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="prefTime" class="form-label small fw-semibold">Preferred Time *</label>
+                    <input type="time" class="form-control salon-tjv-form-control" id="prefTime" required>
+                  </div>
+                  <div class="col-12">
+                    <label for="specialNotes" class="form-label small fw-semibold">Additional Notes / Requests</label>
+                    <textarea class="form-control salon-tjv-form-control" id="specialNotes" rows="4" placeholder="Mention any specific requirements or questions..."></textarea>
+                  </div>
+                  <div class="col-12 mt-4">
+                    <button type="submit" class="salon-tjv-btn-gold w-100">Book Appointment</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Maps Embed Placeholder -->
+        <div class="row mt-5">
+          <div class="col-12">
+            <div class="border p-2 bg-white">
+              <iframe title="Salon Google Maps Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3401.536737525492!2d74.34863337626922!3d31.509489247683707!2m3!1f0!0!f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919045a27843d23%3A0x6b42b58837e2468f!2sM.M.%20Alam%20Rd%2C%20Gulberg%20III%2C%20Lahore%2C%20Punjab!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a href="https://wa.me/923001234567" class="salon-tjv-whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="salon-tjv-footer">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <h3 class="salon-tjv-footer-title">NOOR LUXURY SALON</h3>
+          <p class="text-muted">Pakistan’s premier choice for beauty, skincare, hair therapies, and spa treatments.</p>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h4 class="salon-tjv-footer-title">Navigation</h4>
+          <ul class="salon-tjv-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="bridal.html">Bridal</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h4 class="salon-tjv-footer-title">Services</h4>
+          <ul class="salon-tjv-footer-links">
+            <li><a href="services.html#facials">Facials</a></li>
+            <li><a href="services.html#hair">Hair Care</a></li>
+            <li><a href="bridal.html">Bridal Makeups</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h4 class="salon-tjv-footer-title">Contact</h4>
+          <p class="mb-1"><i class="fa-solid fa-location-dot me-2 text-warning"></i> MM Alam Road, Lahore, Pakistan</p>
+          <p class="mb-1"><i class="fa-solid fa-phone me-2 text-warning"></i> +92 42 35789000</p>
+        </div>
+      </div>
+      <hr style="border-color: rgba(255,255,255,0.1);">
+      <div class="text-center pt-3 text-muted small">
+        <p class="mb-0">&copy; 2026 Noor Luxury Salon Pakistan. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
