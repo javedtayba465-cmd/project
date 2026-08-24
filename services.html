@@ -1,1 +1,626 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services & Treatments Menu | Noor Luxury Salon Pakistan</title>
+  <meta name="description" content="Explore complete beauty treatments at Noor Salon: Medicated Whitening Facials, Hair Rebonding, Keratin, Spa Manicure Pedicure, Body Massages, and Waxing in Pakistan.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --salon-tjv-primary-dark: #302724;
+      --salon-tjv-soft-beige: #faf7f4;
+      --salon-tjv-rose: #d8b7ae;
+      --salon-tjv-muted-brown: #8b6f61;
+      --salon-tjv-gold-accent: #c9a86a;
+      --salon-tjv-white: #ffffff;
+      --salon-tjv-light-beige: #eee4dc;
+      --salon-tjv-font-heading: 'Playfair Display', serif;
+      --salon-tjv-font-body: 'Poppins', sans-serif;
+    }
+
+    body {
+      font-family: var(--salon-tjv-font-body);
+      background-color: var(--salon-tjv-soft-beige);
+      color: var(--salon-tjv-primary-dark);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h4, h5, h6 { font-family: var(--salon-tjv-font-heading); }
+
+    .salon-tjv-navbar {
+      background-color: rgba(48, 39, 36, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+
+    .salon-tjv-navbar-brand {
+      font-family: var(--salon-tjv-font-heading);
+      font-size: 1.8rem;
+      color: var(--salon-tjv-gold-accent) !important;
+      font-weight: 700;
+    }
+
+    .salon-tjv-nav-link {
+      color: var(--salon-tjv-light-beige) !important;
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin: 0 10px;
+    }
+
+    .salon-tjv-nav-link:hover, .salon-tjv-nav-link.salon-tjv-active {
+      color: var(--salon-tjv-gold-accent) !important;
+    }
+
+    .salon-tjv-btn-gold {
+      background-color: var(--salon-tjv-gold-accent);
+      color: var(--salon-tjv-primary-dark);
+      border: 1px solid var(--salon-tjv-gold-accent);
+      padding: 8px 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .salon-tjv-btn-gold:hover {
+      background-color: transparent;
+      color: var(--salon-tjv-gold-accent);
+    }
+
+    .salon-tjv-page-header {
+      background: linear-gradient(rgba(48, 39, 36, 0.75), rgba(48, 39, 36, 0.75)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      padding: 140px 0 60px 0;
+      color: var(--salon-tjv-white);
+      text-align: center;
+    }
+
+    /* Sub-Navigation Anchor Bar */
+    .salon-tjv-anchor-nav {
+      background-color: var(--salon-tjv-primary-dark);
+      position: sticky;
+      top: 70px;
+      z-index: 990;
+      padding: 12px 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .salon-tjv-anchor-link {
+      color: var(--salon-tjv-light-beige);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 6px 15px;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+      display: inline-block;
+    }
+
+    .salon-tjv-anchor-link:hover {
+      color: var(--salon-tjv-gold-accent);
+    }
+
+    .salon-tjv-section-padding { padding: 70px 0; }
+
+    .salon-tjv-section-title {
+      color: var(--salon-tjv-primary-dark);
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .salon-tjv-title-divider {
+      width: 50px;
+      height: 2px;
+      background-color: var(--salon-tjv-gold-accent);
+      margin: 10px 0 30px 0;
+    }
+
+    /* Service Item Card */
+    .salon-tjv-item-card {
+      background-color: var(--salon-tjv-white);
+      border: 1px solid var(--salon-tjv-light-beige);
+      padding: 25px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .salon-tjv-item-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    }
+
+    .salon-tjv-price-tag {
+      color: var(--salon-tjv-muted-brown);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .salon-tjv-footer {
+      background-color: var(--salon-tjv-primary-dark);
+      color: var(--salon-tjv-light-beige);
+      padding-top: 80px;
+      padding-bottom: 30px;
+    }
+
+    .salon-tjv-footer-title { color: var(--salon-tjv-gold-accent); font-size: 1.3rem; margin-bottom: 25px; }
+    .salon-tjv-footer-links { list-style: none; padding: 0; }
+    .salon-tjv-footer-links li { margin-bottom: 12px; }
+    .salon-tjv-footer-links a { color: var(--salon-tjv-light-beige); text-decoration: none; }
+    .salon-tjv-footer-links a:hover { color: var(--salon-tjv-gold-accent); }
+
+    .salon-tjv-whatsapp-btn {
+      position: fixed; bottom: 25px; right: 25px;
+      background-color: #25D366; color: white;
+      width: 55px; height: 55px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 1000; text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top salon-tjv-navbar" aria-label="Main Navigation">
+      <div class="container">
+        <a class="navbar-brand salon-tjv-navbar-brand" href="index.html">NOOR <span style="font-weight:300; font-size:1.2rem; color:var(--salon-tjv-rose);">LUXURY SALON</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#salonTjvNav" aria-controls="salonTjvNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="salonTjvNav">
+          <ul class="navbar-menu navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+            <li class="nav-item"><a class="nav-link salon-tjv-nav-link" href="./index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link salon-tjv-nav-link" href="./aboutus.html">About</a></li>
+            <li class="nav-item"><a class="nav-link salon-tjv-nav-link salon-tjv-active" aria-current="page" href="./services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link salon-tjv-nav-link" href="./bridal.html">Bridal</a></li>
+            <li class="nav-item"><a class="nav-link salon-tjv-nav-link" href="./contact.html">Contact</a></li>
+            <li class="nav-item ms-lg-3 mt-2 mt-lg-0"><a href="contact.html" class="salon-tjv-btn-gold">Book Appointment</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Header -->
+    <section class="salon-tjv-page-header">
+      <div class="container">
+        <h1 class="display-4 fw-bold">Our Service Menu</h1>
+        <p class="lead" style="color: var(--salon-tjv-light-beige);">Comprehensive luxury care crafted for hair, skin, body, and aesthetics</p>
+      </div>
+    </section>
+
+    <!-- Anchor Sticky Nav -->
+    <div class="salon-tjv-anchor-nav text-center overflow-auto text-nowrap">
+      <div class="container">
+        <a href="#facials" class="salon-tjv-anchor-link"><i class="fa-solid fa-sparkles me-1"></i> Facials</a>
+        <a href="#hair" class="salon-tjv-anchor-link"><i class="fa-solid fa-scissors me-1"></i> Hair Care</a>
+        <a href="#manicure-pedicure" class="salon-tjv-anchor-link"><i class="fa-solid fa-hand-sparkles me-1"></i> Mani & Pedi</a>
+        <a href="#massage" class="salon-tjv-anchor-link"><i class="fa-solid fa-spa me-1"></i> Massage</a>
+        <a href="#waxing" class="salon-tjv-anchor-link"><i class="fa-solid fa-feather me-1"></i> Waxing</a>
+        <a href="#makeup" class="salon-tjv-anchor-link"><i class="fa-solid fa-wand-magic-sparkles me-1"></i> Makeup</a>
+      </div>
+    </div>
+
+    <!-- 1. Facial Services -->
+    <section id="facials" class="salon-tjv-section-padding">
+      <div class="container">
+        <h2 class="salon-tjv-section-title">Facial Services</h2>
+        <div class="salon-tjv-title-divider"></div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Medicated Facial</h3>
+                <p class="text-muted small">Dermatologically tested clinical facial targeting hyperpigmentation, uneven tone, and deep pores.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 6,500</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Herbal Facial</h3>
+                <p class="text-muted small">100% botanical extract mask designed to soothe sensitive skin and restore natural glow.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 4,500</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Whitening Facial</h3>
+                <p class="text-muted small">Brightening serum-infused facial for instant brightness before party events.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 7,500</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Acne Facial</h3>
+                <p class="text-muted small">Salicylic acid formula meant to eliminate acne-causing bacteria and reduce oil production.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 5,500</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Sensitive Skin Facial</h3>
+                <p class="text-muted small">Ultra-gentle hypoallergenic soothing treatment calming redness and skin inflammation.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 5,000</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Deep Cleansing Facial</h3>
+                <p class="text-muted small">Exfoliating steam, blackhead removal extraction, and hydrating mask therapy.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 4,000</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Hair Services -->
+    <section id="hair" class="salon-tjv-section-padding" style="background-color: var(--salon-tjv-light-beige);">
+      <div class="container">
+        <h2 class="salon-tjv-section-title">Hair Services</h2>
+        <div class="salon-tjv-title-divider"></div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Hair Rebonding</h3>
+                <p class="text-muted small">Permanent thermal straight smoothing treatment for pin-straight, sleek hair finish.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 18,000+</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Keratin Treatment</h3>
+                <p class="text-muted small">Frizz-eliminating protein seal for natural gloss, soft wave, and manageable locks.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 15,000+</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Protein Treatment</h3>
+                <p class="text-muted small">Deep conditioning mask designed to repair chemical damage and split ends.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 7,000</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Hair Dye & Touchup</h3>
+                <p class="text-muted small">Full length color application or root touchup using ammonia-free L'Oréal shades.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 6,000+</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Hair Highlights / Balayage</h3>
+                <p class="text-muted small">Dimensional foil highlights or hand-painted soft balayage blending.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 12,000+</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Hair Cutting & Styling</h3>
+                <p class="text-muted small">Layered cuts, bobs, blow-drys, and signature red-carpet curls styling.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 3,500</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Manicure & Pedicure -->
+    <section id="manicure-pedicure" class="salon-tjv-section-padding">
+      <div class="container">
+        <h2 class="salon-tjv-section-title">Manicure & Pedicure</h2>
+        <div class="salon-tjv-title-divider"></div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Classic Manicure</h3>
+                <p class="text-muted small">Nail shaping, cuticle soak, hand massage, and polish application.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 2,500</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Premium Manicure</h3>
+                <p class="text-muted small">Exfoliating scrub, paraffin wax treatment, deep massage, and gel paint.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 4,000</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Classic Pedicure</h3>
+                <p class="text-muted small">Foot bath scrub, callus smoothing, nail trimming, and buffing polish.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 3,000</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Spa Pedicure</h3>
+                <p class="text-muted small">Herbal foot soak, organic scrub, hot stone massage, and moisturizing mask.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 5,000</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Massage & Body Therapy -->
+    <section id="massage" class="salon-tjv-section-padding" style="background-color: var(--salon-tjv-light-beige);">
+      <div class="container">
+        <h2 class="salon-tjv-section-title">Massage & Spa Therapies</h2>
+        <div class="salon-tjv-title-divider"></div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Relaxation Massage</h3>
+                <p class="text-muted small">Full body Swedish massage designed to release muscle tension and anxiety.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 8,000</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Head & Shoulder Massage</h3>
+                <p class="text-muted small">Warm essential oil head acupressure massage for migraine and stress relief.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 3,500</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Aromatherapy Body Massage</h3>
+                <p class="text-muted small">Custom floral essential oil blend body therapy in a quiet candlelit suite.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 10,000</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Waxing Services -->
+    <section id="waxing" class="salon-tjv-section-padding">
+      <div class="container">
+        <h2 class="salon-tjv-section-title">Body Waxing Services</h2>
+        <div class="salon-tjv-title-divider"></div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Full Body Wax</h3>
+                <p class="text-muted small">Hygienic Rica/Fruit wax application covering full arms, legs, back, and stomach.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 7,500</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Arms & Legs Wax</h3>
+                <p class="text-muted small">Smooth, painless hair removal using organic honey or fruit sugar wax.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 3,500</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Face Waxing & Threading</h3>
+                <p class="text-muted small">Precision facial hair removal, eyebrow shaping, and upper lip waxing.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 1,500</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Makeup Services -->
+    <section id="makeup" class="salon-tjv-section-padding" style="background-color: var(--salon-tjv-light-beige);">
+      <div class="container">
+        <h2 class="salon-tjv-section-title">Event & Party Makeup</h2>
+        <div class="salon-tjv-title-divider"></div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Party Makeup</h3>
+                <p class="text-muted small">Glamorous night or soft daytime makeup including lashes and signature hairdo.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 12,000</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Engagement Makeup</h3>
+                <p class="text-muted small">Elegant semi-bridal makeover paired with premium mink lashes and hair updos.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 22,000</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="salon-tjv-item-card">
+              <div>
+                <h3 class="h5 mb-2">Party Hairstyling</h3>
+                <p class="text-muted small">Hollywood waves, intricate braids, messy buns, or sleek straight styling.</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                <span class="salon-tjv-price-tag">PKR 4,500</span>
+                <a href="contact.html" class="salon-tjv-btn-gold">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a href="https://wa.me/923001234567" class="salon-tjv-whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="salon-tjv-footer">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <h3 class="salon-tjv-footer-title">NOOR LUXURY SALON</h3>
+          <p class="text-muted">Pakistan’s premier choice for beauty, skincare, hair therapies, and spa treatments.</p>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h4 class="salon-tjv-footer-title">Navigation</h4>
+          <ul class="salon-tjv-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="bridal.html">Bridal</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h4 class="salon-tjv-footer-title">Service Links</h4>
+          <ul class="salon-tjv-footer-links">
+            <li><a href="#facials">Facials</a></li>
+            <li><a href="#hair">Hair Care</a></li>
+            <li><a href="#makeup">Party Makeup</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h4 class="salon-tjv-footer-title">Contact</h4>
+          <p class="mb-1"><i class="fa-solid fa-location-dot me-2 text-warning"></i> MM Alam Road, Lahore, Pakistan</p>
+          <p class="mb-1"><i class="fa-solid fa-phone me-2 text-warning"></i> +92 42 35789000</p>
+        </div>
+      </div>
+      <hr style="border-color: rgba(255,255,255,0.1);">
+      <div class="text-center pt-3 text-muted small">
+        <p class="mb-0">&copy; 2026 Noor Luxury Salon Pakistan. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
