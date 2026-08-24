@@ -1,1 +1,390 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bridal Makeup Packages & Transformations | Noor Luxury Salon</title>
+  <meta name="description" content="Discover royal Pakistani bridal makeup packages for Barat, Walima, Mehendi, & Engagement at Noor Luxury Salon. Signature aesthetics, hair styling, and consultations.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --salon-tjv-primary-dark: #302724;
+      --salon-tjv-soft-beige: #faf7f4;
+      --salon-tjv-rose: #d8b7ae;
+      --salon-tjv-muted-brown: #8b6f61;
+      --salon-tjv-gold-accent: #c9a86a;
+      --salon-tjv-white: #ffffff;
+      --salon-tjv-light-beige: #eee4dc;
+      --salon-tjv-font-heading: 'Playfair Display', serif;
+      --salon-tjv-font-body: 'Poppins', sans-serif;
+    }
+
+    body {
+      font-family: var(--salon-tjv-font-body);
+      background-color: var(--salon-tjv-soft-beige);
+      color: var(--salon-tjv-primary-dark);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 { font-family: var(--salon-tjv-font-heading); }
+
+    .salon-tjv-navbar {
+      background-color: rgba(48, 39, 36, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+
+    .salon-tjv-navbar-brand {
+      font-family: var(--salon-tjv-font-heading);
+      font-size: 1.8rem;
+      color: var(--salon-tjv-gold-accent) !important;
+      font-weight: 700;
+    }
+
+    .salon-tjv-nav-link {
+      color: var(--salon-tjv-light-beige) !important;
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin: 0 10px;
+    }
+
+    .salon-tjv-nav-link:hover, .salon-tjv-nav-link.salon-tjv-active {
+      color: var(--salon-tjv-gold-accent) !important;
+    }
+
+    .salon-tjv-btn-gold {
+      background-color: var(--salon-tjv-gold-accent);
+      color: var(--salon-tjv-primary-dark);
+      border: 1px solid var(--salon-tjv-gold-accent);
+      padding: 12px 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .salon-tjv-btn-gold:hover {
+      background-color: transparent;
+      color: var(--salon-tjv-gold-accent);
+    }
+
+    /* Bridal Hero */
+    .salon-tjv-bridal-hero {
+      min-height: 80vh;
+      background: linear-gradient(rgba(48, 39, 36, 0.6), rgba(48, 39, 36, 0.6)), url('https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      color: var(--salon-tjv-white);
+      padding-top: 80px;
+    }
+
+    .salon-tjv-section-padding { padding: 90px 0; }
+
+    .salon-tjv-section-title {
+      color: var(--salon-tjv-primary-dark);
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .salon-tjv-title-divider {
+      width: 60px;
+      height: 2px;
+      background-color: var(--salon-tjv-gold-accent);
+      margin: 15px auto 30px auto;
+    }
+
+    /* Package Cards */
+    .salon-tjv-package-card {
+      background-color: var(--salon-tjv-white);
+      border: 1px solid var(--salon-tjv-gold-accent);
+      padding: 40px 30px;
+      text-align: center;
+      transition: all 0.4s ease;
+      position: relative;
+      height: 100%;
+    }
+
+    .salon-tjv-package-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(201, 168, 106, 0.2);
+    }
+
+    .salon-tjv-package-card.salon-tjv-popular {
+      background-color: var(--salon-tjv-primary-dark);
+      color: var(--salon-tjv-white);
+    }
+
+    .salon-tjv-popular-badge {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--salon-tjv-gold-accent);
+      color: var(--salon-tjv-primary-dark);
+      padding: 4px 15px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* Gallery */
+    .salon-tjv-bridal-gallery img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .salon-tjv-bridal-gallery-item {
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .salon-tjv-bridal-gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .salon-tjv-footer {
+      background-color: var(--salon-tjv-primary-dark);
+      color: var(--salon-tjv-light-beige);
+      padding-top: 80px;
+      padding-bottom: 30px;
+    }
+
+    .salon-tjv-footer-title { color: var(--salon-tjv-gold-accent); font-size: 1.3rem; margin-bottom: 25px; }
+    .salon-tjv-footer-links { list-style: none; padding: 0; }
+    .salon-tjv-footer-links li { margin-bottom: 12px; }
+    .salon-tjv-footer-links a { color: var(--salon-tjv-light-beige); text-decoration: none; }
+    .salon-tjv-footer-links a:hover { color: var(--salon-tjv-gold-accent); }
+
+    .salon-tjv-whatsapp-btn {
+      position: fixed; bottom: 25px; right: 25px;
+      background-color: #25D366; color: white;
+      width: 55px; height: 55px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 1000; text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top salon-tjv-navbar" aria-label="Main Navigation">
+      <div class="container">
+        <a class="navbar-brand salon-tjv-navbar-brand" href="index.html">NOOR <span style="font-weight:300; font-size:1.2rem; color:var(--salon-tjv-rose);">LUXURY SALON</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#salonTjvNav" aria-controls="salonTjvNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="salonTjvNav">
+          <ul class="navbar-menu navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+            <li class="nav-item"><a class="nav-link salon-tjv-nav-link" href="./index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link salon-tjv-nav-link" href="./aboutus.html">About</a></li>
+            <li class="nav-item"><a class="nav-link salon-tjv-nav-link" href="./services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link salon-tjv-nav-link salon-tjv-active" aria-current="page" href="./bridal.html">Bridal</a></li>
+            <li class="nav-item"><a class="nav-link salon-tjv-nav-link" href="./contact.html">Contact</a></li>
+            <li class="nav-item ms-lg-3 mt-2 mt-lg-0"><a href="contact.html" class="salon-tjv-btn-gold">Book Appointment</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Bridal Hero Section -->
+    <section class="salon-tjv-bridal-hero text-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <span class="text-uppercase tracking-widest text-warning font-semibold">Pakistani Royal Couture Looks</span>
+            <h1 class="display-3 fw-bold mt-2 mb-4">Your Big Day Deserves a Signature Look</h1>
+            <p class="lead mb-5" style="color: var(--salon-tjv-light-beige);">Exquisite Barat, Walima, Mehendi, and Engagement makeover packages customized for your dream wedding.</p>
+            <a href="contact.html" class="salon-tjv-btn-gold">Book Your Bridal Consultation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bridal Categories Overview -->
+    <section class="salon-tjv-section-padding">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="salon-tjv-section-subtitle">Comprehensive Wedding Services</span>
+          <h2 class="salon-tjv-section-title">Bridal & Event Specializations</h2>
+          <div class="salon-tjv-title-divider"></div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="p-4 bg-white border text-center">
+              <i class="fa-solid fa-gem fs-1 text-warning mb-3"></i>
+              <h3 class="h4">Barat Bridal Makeup</h3>
+              <p class="text-muted">Classic Pakistani royal bride makeover featuring traditional red tones, heavy contouring, mink lashes, and Dupatta setting.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-4 bg-white border text-center">
+              <i class="fa-solid fa-crown fs-1 text-warning mb-3"></i>
+              <h3 class="h4">Walima Reception Makeup</h3>
+              <p class="text-muted">Soft pastels, dewy luminous skin finishes, metallic eyes, and regal updos for reception day elegance.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-4 bg-white border text-center">
+              <i class="fa-solid fa-heart fs-1 text-warning mb-3"></i>
+              <h3 class="h4">Mehendi & Nikkah Looks</h3>
+              <p class="text-muted">Fresh, vibrant, glowy makeovers paired with intricate floral braided hair and subtle accent eyes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Package Cards -->
+    <section class="salon-tjv-section-padding" style="background-color: var(--salon-tjv-light-beige);">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="salon-tjv-section-subtitle">Tailored Offerings</span>
+          <h2 class="salon-tjv-section-title">Exclusive Bridal Packages</h2>
+          <div class="salon-tjv-title-divider"></div>
+        </div>
+        <div class="row g-4 align-items-stretch">
+          <!-- Package 1 -->
+          <div class="col-lg-4">
+            <div class="salon-tjv-package-card">
+              <h3 class="h3 mb-3">Bridal Signature</h3>
+              <p class="text-muted mb-4">Essential single-day makeover for Barat or Walima.</p>
+              <div class="h4 text-warning mb-4">Price on Consultation</div>
+              <ul class="list-unstyled text-start mb-4" style="line-height: 2;">
+                <li><i class="fa-solid fa-check text-warning me-2"></i> HD Bridal Makeup by Senior Artist</li>
+                <li><i class="fa-solid fa-check text-warning me-2"></i> Custom Hairstyling & Extensions</li>
+                <li><i class="fa-solid fa-check text-warning me-2"></i> Eyelashes & Lens Fitting</li>
+                <li><i class="fa-solid fa-check text-warning me-2"></i> Dupatta & Jewelry Setting</li>
+                <li><i class="fa-solid fa-check text-warning me-2"></i> Nail Polish Application</li>
+              </ul>
+              <a href="contact.html" class="salon-tjv-btn-gold w-100">Reserve Package</a>
+            </div>
+          </div>
+          <!-- Package 2 Popular -->
+          <div class="col-lg-4">
+            <div class="salon-tjv-package-card salon-tjv-popular">
+              <div class="salon-tjv-popular-badge">Most Popular</div>
+              <h3 class="h3 mb-3 text-white">Bridal Premium</h3>
+              <p class="text-white-50 mb-4">Comprehensive multi-event bridal luxury transformation.</p>
+              <div class="h4 text-warning mb-4">Price on Consultation</div>
+              <ul class="list-unstyled text-start mb-4" style="line-height: 2; color: var(--salon-tjv-light-beige);">
+                <li><i class="fa-solid fa-check text-warning me-2"></i> Barat OR Walima Makeup by Master MUA</li>
+                <li><i class="fa-solid fa-check text-warning me-2"></i> Nikkah or Engagement Makeup Included</li>
+                <li><i class="fa-solid fa-check text-warning me-2"></i> Pre-Bridal Hydra-Facial Treatment</li>
+                <li><i class="fa-solid fa-check text-warning me-2"></i> Spa Manicure & Pedicure</li>
+                <li><i class="fa-solid fa-check text-warning me-2"></i> Full Body Waxing Session</li>
+              </ul>
+              <a href="contact.html" class="salon-tjv-btn-gold w-100">Reserve Package</a>
+            </div>
+          </div>
+          <!-- Package 3 -->
+          <div class="col-lg-4">
+            <div class="salon-tjv-package-card">
+              <h3 class="h3 mb-3">Bridal Luxury</h3>
+              <p class="text-muted mb-4">The ultimate 3-day royal bridal pampering suite.</p>
+              <div class="h4 text-warning mb-4">Price on Consultation</div>
+              <ul class="list-unstyled text-start mb-4" style="line-height: 2;">
+                <li><i class="fa-solid fa-check text-warning me-2"></i> 3 Event Makeovers (Mehendi, Barat, Walima)</li>
+                <li><i class="fa-solid fa-check text-warning me-2"></i> Private Luxury Bridal Suite</li>
+                <li><i class="fa-solid fa-check text-warning me-2"></i> Gold Glow Facial Therapy</li>
+                <li><i class="fa-solid fa-check text-warning me-2"></i> Keratin or Hair Gloss Treatment</li>
+                <li><i class="fa-solid fa-check text-warning me-2"></i> Complimentary Party Makeup (1 Guest)</li>
+              </ul>
+              <a href="contact.html" class="salon-tjv-btn-gold w-100">Reserve Package</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bridal Gallery -->
+    <section class="salon-tjv-section-padding">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="salon-tjv-section-subtitle">Real Brides</span>
+          <h2 class="salon-tjv-section-title">Bridal Lookbook Gallery</h2>
+          <div class="salon-tjv-title-divider"></div>
+        </div>
+        <div class="row g-3 salon-tjv-bridal-gallery">
+          <div class="col-md-4 col-6">
+            <div class="salon-tjv-bridal-gallery-item">
+              <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=600&q=80" alt="Pakistani Barat Bride Makeup" loading="lazy">
+            </div>
+          </div>
+          <div class="col-md-4 col-6">
+            <div class="salon-tjv-bridal-gallery-item">
+              <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=600&q=80" alt="Traditional Pakistani Bridal Jewelry and Hair" loading="lazy">
+            </div>
+          </div>
+          <div class="col-md-4 col-6">
+            <div class="salon-tjv-bridal-gallery-item">
+              <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80" alt="Bridal Hair Updo in Salon" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a href="https://wa.me/923001234567" class="salon-tjv-whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="salon-tjv-footer">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <h3 class="salon-tjv-footer-title">NOOR LUXURY SALON</h3>
+          <p class="text-muted">Crafting exquisite, timeless Pakistani bridal transformations with royal perfection.</p>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h4 class="salon-tjv-footer-title">Navigation</h4>
+          <ul class="salon-tjv-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="bridal.html">Bridal</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h4 class="salon-tjv-footer-title">Bridal Links</h4>
+          <ul class="salon-tjv-footer-links">
+            <li><a href="bridal.html">Barat Makeup</a></li>
+            <li><a href="bridal.html">Walima Looks</a></li>
+            <li><a href="contact.html">Consultation</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h4 class="salon-tjv-footer-title">Contact</h4>
+          <p class="mb-1"><i class="fa-solid fa-location-dot me-2 text-warning"></i> MM Alam Road, Lahore, Pakistan</p>
+          <p class="mb-1"><i class="fa-solid fa-phone me-2 text-warning"></i> +92 42 35789000</p>
+        </div>
+      </div>
+      <hr style="border-color: rgba(255,255,255,0.1);">
+      <div class="text-center pt-3 text-muted small">
+        <p class="mb-0">&copy; 2026 Noor Luxury Salon Pakistan. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
